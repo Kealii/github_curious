@@ -10,6 +10,8 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'materialize-sass'
+gem 'omniauth'
+gem 'figaro'
 # gem 'bcrypt', '~> 3.1.7'
 # gem 'unicorn'
 # gem 'capistrano-rails', group: :development
@@ -17,6 +19,7 @@ gem 'materialize-sass'
 group :development, :test do
   gem 'byebug'
   gem 'rspec-rails'
+  gem 'capybara'
 end
 
 group :development do
