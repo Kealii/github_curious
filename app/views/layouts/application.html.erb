@@ -10,13 +10,7 @@
 
 <div class="container">
 
-  <% flash.each do |type, msg| %>
-    <h5 class="hide">
-      <%= content_tag :div, sanitize(msg), class: "flash_#{type}" %>
-    </h5>
-    <body onload="Materialize.toast('<%=msg%>', 3500)">
-  <% end %>
-
+  <%= render 'layouts/flash_messages' if !flash.empty? %>
   <%= yield %>
 
 </div>

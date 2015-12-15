@@ -3,13 +3,13 @@ class SessionsController < ApplicationController
     auth = request.env["omniauth.auth"]
     user = User.find_by_uid(auth["uid"]) || User.from_omniauth(auth)
     session[:user_id] = user.id
-    flash[:notice] = "Signed in!"
+    flash[:notice] = "Logged in!"
     redirect_to root_url
   end
 
   def destroy
-    flash[:notice] = "Signed out!"
     session[:user_id] = nil
+    flash[:notice] = "Logged out!"
     redirect_to root_url
   end
 end

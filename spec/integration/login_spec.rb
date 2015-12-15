@@ -1,4 +1,4 @@
-require "spec_helper"
+require "rails_helper"
 
 feature 'testing oauth' do
 
@@ -11,10 +11,9 @@ feature 'testing oauth' do
     login_with_oauth
 
     expect(current_path).to eq(root_path)
-    expect(page).to have_content('Signed in!')
+    expect(page).to have_content('Logged in!')
     expect(page).to have_content('Test User')
     expect(page).to have_content('Logout')
-
   end
 
   scenario 'logout of github' do
@@ -23,7 +22,7 @@ feature 'testing oauth' do
     visit logout_path
 
     expect(current_path).to eq(root_path)
-    expect(page).to have_content('Signed out!')
+    expect(page).to have_content('Logged out!')
     expect(page).to have_content('Login')
   end
 end
