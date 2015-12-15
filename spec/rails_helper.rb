@@ -15,9 +15,28 @@ RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
 end
 
-OmniAuth.config.test_mode = true
-OmniAuth.config.add_mock(:github, { uid: '12345', name: 'michael' })
+def stub_omniauth
+  OmniAuth.config.test_mode = true
+  OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new(
+      {
+        provider: 'github',
+        extra: {
+          raw_info: {
+            uid: '1',
+            name: 'Test User'
+          }
+        },
+        credentials: {
+          token:  ENV['GITHUB_TOKEN'],
+          secret: ENV['GITHUB_SECRET']
+        }
+      })
+end
 
 def login_with_oauth
-  visit '/auth/github'
+  visit login_path
+end
+
+def bad_omniauth_credentials
+  OmniAuth.config.test_mode=true
 end
