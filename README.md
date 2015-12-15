@@ -38,64 +38,6 @@ You'll work with an instructor to define more explicitly the requirements for yo
 
 The authoritative project requirements will be created and maintained in collaboration with your client through meetings and your project management tool. This means that the requirements for your could differ significantly from other projects.
 
-## <a name="available-apis"></a> Available APIs
-
-To start, you need to select an API to work with. We've selected the following list of applications for their well-documented public APIs, and relatively straightforward UI's.
-
-For each project, we have included a rough summary list of features to include. As with any development project, you should focus on moving iteratively through the most basic features before starting on more complex ones. During the project, the instructors will meet with you to assess progress and determine what features to focus on next.
-
-### Twitter
-
-Build a basic version of the Twitter feed. As a user, I should be able to:
-
-* Authenticate with my Twitter account
-* View a list of recent tweets from my feed
-* See my basic profile information (profile pic, follower count, following count, etc)
-* Post a tweet
-* Favorite a tweet
-
-Extensions:
-
-* Retweeting a tweet
-* Replying to a tweet
-* Use a paginated or infinite-scroll interface to view more tweets
-* Unfollow a user
-
-### Instagram
-
-Build a basic version of the Instagram (web) UI. As a user, I should be able to:
-
-* Authenticate with my Instagram account
-* See my basic profile information (username, profile pic)
-* View a list of recent posts from my feed
-* View photos for each post
-* View comments for each post
-* View like count for each post
-
-Extensions:
-
-* Infinite Scroll to view more photos
-* See trending posts
-* Show pictures that match a hashtag
-* Search for a user
-
-### Tumblr
-
-Build a basic version of the Tumblr UI. As a user, I should be able to:
-
-* Authenticate with my Tumblr account
-* See my basic profile information (username, profile pic)
-* View a list of recent posts from my feed
-* View embedded photo or video content for the posts
-* Favorite a post
-* Reblog a post
-
-Extensions:
-
-* Create a post (perhaps starting with just text posts and moving on to more complicated types)
-* Generate a permalink for a post
-* Follow a user whose post was reblogged into my feed
-
 ### Github
 
 Build a basic version of the Github profile / feed UI. As a user, I should be able to:
