@@ -13,6 +13,8 @@ feature 'testing oauth' do
     expect(current_path).to eq(root_path)
     expect(page).to have_content('Logged in!')
     expect(page).to have_content('Test User')
+    # expect(page).to have_content('Followers: 5')
+    expect(page).to have_content('Following: 3')
     expect(page).to have_content('Logout')
   end
 
