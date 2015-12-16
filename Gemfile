@@ -21,6 +21,9 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'simplecov'
+  gem 'hurley'
+  gem 'vcr'
+  gem 'webmock'
 end
 
 group :development do

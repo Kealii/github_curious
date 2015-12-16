@@ -5,6 +5,9 @@ require 'spec_helper'
 require 'rspec/rails'
 require 'simplecov'
 require 'capybara/rails'
+require 'webmock'
+require 'vcr'
+
 SimpleCov.start 'rails'
 
 ActiveRecord::Migration.maintain_test_schema!
@@ -13,6 +16,11 @@ RSpec.configure do |config|
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
   config.use_transactional_fixtures = true
   config.infer_spec_type_from_file_location!
+end
+
+VCR.configure do |config|
+  config.cassette_library_dir = 'spec/cassettes'
+  config.hook_into :webmock
 end
 
 def stub_omniauth
@@ -38,5 +46,5 @@ def login_with_oauth
 end
 
 def bad_omniauth_credentials
-  OmniAuth.config.test_mode=true
+  OmniAuth.config.test_mode = true
 end
