@@ -2,8 +2,9 @@
   <h1>Welcome to Github Curious</h1>
   <% if current_user %>
     <%= render 'welcome/basic_info' %>
-    <%= render 'welcome/repositories' if @github_service.repos %>
-    <%= render 'welcome/organizations' if @github_service.orgs %>
+    <%= render 'welcome/repositories' %>
+    <%= render 'welcome/organizations' %>
+    <%= render 'welcome/contributions' %>
 
     <br>
     <%= link_to "Logout", logout_path, class: 'btn' %>

@@ -216,6 +216,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   materialize-sass
+  nokogiri
   omniauth-github
   pg
   rails (= 4.2.4)
