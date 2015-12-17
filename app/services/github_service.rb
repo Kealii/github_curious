@@ -1,8 +1,9 @@
 class GithubService
 
-  attr_reader :connection
+  attr_reader :connection, :logger
 
-  def initialize(current_user = nil)
+  def initialize(current_user = nil, logger = nil)
+    @logger = logger
     @connection = Hurley::Client.new("https://api.github.com")
 
     if Rails.env.test?
@@ -13,6 +14,7 @@ class GithubService
   end
 
   def following_count
+    logger.debug 'getting following count'
     parse(connection.get('/user/following')).count
   end
 
@@ -25,6 +27,7 @@ class GithubService
   end
 
   def repos
+    logger.debug 'fetching repos'
     parse(connection.get('/user/repos'))
   end
 

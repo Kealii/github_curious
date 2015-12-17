@@ -1,7 +1,8 @@
 require 'rails_helper'
 
 feature 'github service test' do
-  let(:service) { GithubService.new }
+  let(:dummy_logger) {double(:logger, debug: 'true')}
+  let(:service) { GithubService.new(nil, dummy_logger) }
 
   scenario '#following_count' do
     VCR.use_cassette('github service #following_count') do
