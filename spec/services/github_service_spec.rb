@@ -26,4 +26,13 @@ feature 'github service test' do
       assert_equal 0, starred_count
     end
   end
+
+  scenario '#repos' do
+    VCR.use_cassette('github service #repos') do
+      repos = service.repos
+
+      assert_equal 30, repos.count
+      assert_equal "active-record-sinatra", repos.first[:name]
+    end
+  end
 end

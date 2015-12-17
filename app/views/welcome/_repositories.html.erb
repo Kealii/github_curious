@@ -1,0 +1,17 @@
+<table>
+  <thead>
+  <tr>
+    <th data-field="repo-name">Repository</th>
+    <th data-field="url">URL</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @github_service.repos.each do |repo| %>
+    <tr>
+      <td><%= repo[:name] %></td>
+      <td><%= link_to repo[:html_url], repo[:html_url] %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

@@ -23,6 +23,10 @@ class GithubService
     parse(connection.get('/user/starred')).count
   end
 
+  def repos
+    parse(connection.get('/user/repos'))
+  end
+
   private
 
     def parse(response)
