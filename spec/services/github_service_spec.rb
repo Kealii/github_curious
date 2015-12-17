@@ -5,7 +5,7 @@ feature 'github service test' do
 
   scenario '#following_count' do
     VCR.use_cassette('github service #following_count') do
-      following_count = service.following_count
+      following_count = service.following.count
 
       assert_equal 3, following_count
     end
