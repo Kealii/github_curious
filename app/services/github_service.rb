@@ -4,6 +4,7 @@ class GithubService
 
   def initialize(current_user = nil)
     @connection = Hurley::Client.new("https://api.github.com")
+
     if Rails.env.test?
       @connection.query[:access_token] = ENV['GITHUB_PERSONAL']
     else
@@ -25,6 +26,10 @@ class GithubService
 
   def repos
     parse(connection.get('/user/repos'))
+  end
+
+  def orgs
+    parse(connection.get('/user/orgs'))
   end
 
   private

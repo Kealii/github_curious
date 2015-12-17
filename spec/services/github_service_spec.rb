@@ -35,4 +35,12 @@ feature 'github service test' do
       assert_equal 'traffic_spy', repos.first[:name]
     end
   end
+
+  scenario '#orgs' do
+    VCR.use_cassette('github service #orgs') do
+      orgs = service.orgs
+
+      assert_equal 3, orgs.count
+    end
+  end
 end

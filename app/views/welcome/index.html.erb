@@ -3,6 +3,7 @@
   <% if current_user %>
     <%= render 'welcome/basic_info' %>
     <%= render 'welcome/repositories' if @github_service.repos %>
+    <%= render 'welcome/organizations' if @github_service.orgs %>
 
     <br>
     <%= link_to "Logout", logout_path, class: 'btn' %>
