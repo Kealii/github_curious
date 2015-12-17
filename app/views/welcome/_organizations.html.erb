@@ -1,0 +1,14 @@
+<table>
+  <thead>
+  <tr>
+    <th data-field="repo-name">Organizations</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @github_service.orgs.each do |org| %>
+    <tr>
+      <td><%= org[:login] %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
