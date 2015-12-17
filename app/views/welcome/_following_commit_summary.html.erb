@@ -1,11 +1,10 @@
 <% @github_service.following.each do |followed| %>
-  <h4></h4>
   <table>
     <thead>
     <caption><h4><%= followed[:login] %>'s Commit Summary</h4></caption>
     <tr>
-      <th data-field="repo-name">Repository</th>
-      <th data-field="branch">Branch</th>
+      <th>Repository</th>
+      <th>Branch</th>
     </tr>
     </thead>
     <tbody>

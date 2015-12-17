@@ -37,11 +37,7 @@ class GithubService
   end
 
   def commits(login)
-    if Rails.env.test?
-      nil
-    else
-      events(login).select{ |event| event[:type] == "PushEvent"}
-    end
+    events(login).select{ |event| event[:type] == "PushEvent"} if !Rails.env.test?
   end
 
   private

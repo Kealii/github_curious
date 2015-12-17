@@ -1,16 +1,13 @@
 <div class=well">
-  <h1>Welcome to Github Curious</h1>
   <% if current_user %>
     <%= render 'welcome/basic_info' %>
-    <%= render 'welcome/repositories'   if @github_service.repos %>
-    <%= render 'welcome/organizations'  if @github_service.orgs %>
     <%= render 'welcome/contributions'  if @contributions %>
+    <%= render 'welcome/organizations'  if @github_service.orgs %>
+    <%= render 'welcome/repositories'   if @github_service.repos %>
     <%= render 'welcome/commit_summary' if @github_service.commits(current_user.login) %>
     <%= render 'welcome/following_commit_summary' if @github_service.commits(current_user.login) %>
-
-    <br>
-    <%= link_to "Logout", logout_path, class: 'btn' %>
   <% else %>
-    <%= link_to "Login", login_path, class: 'btn' %>
+    <br>
+    <h4>Welcome to Github Curious. Please <%= link_to "login", login_path %> to continue!</h4>
   <% end %>
 </div>

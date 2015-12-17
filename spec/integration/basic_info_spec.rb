@@ -13,9 +13,12 @@ feature 'displaying basic info' do
 
       expect(current_path).to eq(root_path)
       expect(page).to have_content('Test User')
-      expect(page).to have_content('Followers: 13')
-      expect(page).to have_content('Following: 3')
-      expect(page).to have_content('Starred: 5')
+      expect(page).to have_content('Followers')
+      expect(page).to have_content('13')
+      expect(page).to have_content('Following')
+      expect(page).to have_content('3')
+      expect(page).to have_content('Starred')
+      expect(page).to have_content('5')
     end
   end
 end

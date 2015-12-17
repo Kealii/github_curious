@@ -1,3 +1,22 @@
 @import "materialize/components/color";
 $primary-color: color("blue", "lighten-2") !default;
 @import "materialize";
+
+th {
+  text-align: center;
+  vertical-align: middle;
+}
+
+td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+h4 {
+  text-align: center;
+}
+
+#profile_image {
+  display: block;
+  margin: 0 auto;
+}
