@@ -12,7 +12,7 @@ feature 'displaying repositories' do
       login_with_oauth
 
       expect(current_path).to eq(root_path)
-      expect(page).to have_content('traffic-spy')
+      expect(page).to have_content('traffic_spy')
     end
   end
 end
