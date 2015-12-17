@@ -21,7 +21,7 @@ http_interactions:
       Server:
       - GitHub.com
       Date:
-      - Thu, 17 Dec 2015 05:14:12 GMT
+      - Thu, 17 Dec 2015 05:19:30 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -31,7 +31,7 @@ http_interactions:
       X-Ratelimit-Limit:
       - '5000'
       X-Ratelimit-Remaining:
-      - '4923'
+      - '4913'
       X-Ratelimit-Reset:
       - '1450329756'
       Cache-Control:
@@ -65,12 +65,85 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Served-By:
-      - 065b43cd9674091fec48a221b420fbb3
+      - 2d7a5e35115884240089368322196939
       X-Github-Request-Id:
-      - 403A00C2:134F2:AFCC439:567244A3
+      - 403A00C2:1D262:CD405AA:567245E2
     body:
       encoding: UTF-8
       string: "[]"
     http_version: 
-  recorded_at: Thu, 17 Dec 2015 05:14:12 GMT
+  recorded_at: Thu, 17 Dec 2015 05:19:30 GMT
+- request:
+    method: get
+    uri: https://api.github.com/user/followers?access_token=a981a7bb0a7f0c74ed5a422d1ae961c289cb8786
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Hurley v0.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Thu, 17 Dec 2015 05:19:31 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '2'
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4912'
+      X-Ratelimit-Reset:
+      - '1450329756'
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Etag:
+      - '"98f0c1b396a4e5d54f4d5fe561d54b44"'
+      X-Oauth-Scopes:
+      - gist, read:org, repo, user
+      X-Accepted-Oauth-Scopes:
+      - ''
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding
+      X-Github-Media-Type:
+      - github.v3
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - deny
+      Content-Security-Policy:
+      - default-src 'none'
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Expose-Headers:
+      - ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset,
+        X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - "*"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Served-By:
+      - 13d09b732ebe76f892093130dc088652
+      X-Github-Request-Id:
+      - 403A00C2:1D262:CD40650:567245E3
+    body:
+      encoding: UTF-8
+      string: "[]"
+    http_version: 
+  recorded_at: Thu, 17 Dec 2015 05:19:31 GMT
 recorded_with: VCR 2.9.3

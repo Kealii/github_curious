@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.github.com/user/following?access_token=a981a7bb0a7f0c74ed5a422d1ae961c289cb8786
+    uri: https://api.github.com/user/followers?access_token=a981a7bb0a7f0c74ed5a422d1ae961c289cb8786
     body:
       encoding: US-ASCII
       string: ''
@@ -31,7 +31,7 @@ http_interactions:
       X-Ratelimit-Limit:
       - '5000'
       X-Ratelimit-Remaining:
-      - '4909'
+      - '4908'
       X-Ratelimit-Reset:
       - '1450329756'
       Cache-Control:
@@ -65,9 +65,9 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       X-Served-By:
-      - a6882e5cd2513376cb9481dbcd83f3a2
+      - 173530fed4bbeb1e264b2ed22e8b5c20
       X-Github-Request-Id:
-      - 403A00C2:1D261:E7F5EA7:567245E5
+      - 403A00C2:1D261:E7F5F0E:567245E5
     body:
       encoding: UTF-8
       string: "[]"

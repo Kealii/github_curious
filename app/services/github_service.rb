@@ -15,6 +15,10 @@ class GithubService
     parse(connection.get('/user/following')).count
   end
 
+  def followers_count
+    parse(connection.get('/user/followers')).count
+  end
+
   private
 
     def parse(response)

@@ -10,4 +10,12 @@ feature 'github service test' do
       assert_equal 0, following_count
     end
   end
+
+  scenario '#followers_count' do
+    VCR.use_cassette('github service #followers_count') do
+      followers_count = service.followers_count
+
+      assert_equal 0, followers_count
+    end
+  end
 end
