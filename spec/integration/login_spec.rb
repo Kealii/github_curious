@@ -7,24 +7,28 @@ feature 'testing oauth' do
   end
 
   scenario 'login with github' do
-    stub_omniauth
-    login_with_oauth
+    VCR.use_cassette('login with github') do
+      stub_omniauth
+      login_with_oauth
 
-    expect(current_path).to eq(root_path)
-    expect(page).to have_content('Logged in!')
-    expect(page).to have_content('Test User')
-    # expect(page).to have_content('Followers: 5')
-    # expect(page).to have_content('Following: 3')
-    expect(page).to have_content('Logout')
+      expect(current_path).to eq(root_path)
+      expect(page).to have_content('Logged in!')
+      expect(page).to have_content('Test User')
+      # expect(page).to have_content('Followers: 5')
+      expect(page).to have_content('Following: 0')
+      expect(page).to have_content('Logout')
+    end
   end
 
   scenario 'logout of github' do
-    stub_omniauth
-    login_with_oauth
-    visit logout_path
+    VCR.use_cassette('logout of github') do
+      stub_omniauth
+      login_with_oauth
+      visit logout_path
 
-    expect(current_path).to eq(root_path)
-    expect(page).to have_content('Logged out!')
-    expect(page).to have_content('Login')
+      expect(current_path).to eq(root_path)
+      expect(page).to have_content('Logged out!')
+      expect(page).to have_content('Login')
+    end
   end
 end

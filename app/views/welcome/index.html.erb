@@ -2,6 +2,7 @@
   <h1>Welcome to Github Curious</h1>
   <% if current_user %>
     <h4>Hello, <%= current_user.name %></h4>
+    <p>Following: <%= @github_service.following_count %></p>
     <%= image_tag current_user.image_url %>
     <br>
     <%= link_to "Logout", logout_path, class: 'btn' %>
