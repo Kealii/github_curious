@@ -2,13 +2,13 @@ require 'rails_helper'
 
 feature 'testing oauth' do
 
-  before do
+  before :each do
     OmniAuth.config.mock_auth[:github] = nil
+    stub_omniauth
   end
 
   scenario 'login with github' do
     VCR.use_cassette('login with github') do
-      stub_omniauth
       login_with_oauth
 
       expect(current_path).to eq(root_path)
@@ -20,7 +20,6 @@ feature 'testing oauth' do
 
   scenario 'logout of github' do
     VCR.use_cassette('logout of github') do
-      stub_omniauth
       login_with_oauth
       visit logout_path
 

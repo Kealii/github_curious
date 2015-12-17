@@ -5,9 +5,8 @@ require 'spec_helper'
 require 'rspec/rails'
 require 'simplecov'
 require 'capybara/rails'
-require 'webmock'
+require 'webmock/rspec'
 require 'vcr'
-
 SimpleCov.start 'rails'
 
 ActiveRecord::Migration.maintain_test_schema!
