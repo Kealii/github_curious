@@ -1,8 +1,6 @@
 class SessionsController < ApplicationController
   def create
-    logger.debug 'creating session'
     auth = request.env["omniauth.auth"]
-    logger.debug "auth is #{auth}"
     user = User.find_by_uid(auth["uid"]) || User.from_omniauth(auth)
     session[:user_id] = user.id
     flash[:notice] = "Logged in!"
