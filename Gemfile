@@ -14,7 +14,7 @@ gem 'omniauth-github'
 gem 'figaro'
 gem 'hurley'
 gem 'nokogiri'
-
+gem 'rails_12factor'
 # gem 'bcrypt', '~> 3.1.7'
 # gem 'unicorn'
 # gem 'capistrano-rails', group: :development
