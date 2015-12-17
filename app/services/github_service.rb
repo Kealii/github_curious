@@ -12,8 +12,8 @@ class GithubService
     end
   end
 
-  def following_count
-    parse(connection.get('/user/following')).count
+  def following
+    parse(connection.get('/user/following'))
   end
 
   def followers_count
@@ -30,6 +30,14 @@ class GithubService
 
   def orgs
     parse(connection.get('/user/orgs'))
+  end
+
+  def events(login)
+    parse(connection.get("/users/#{login}/events"))
+  end
+
+  def commits(login)
+    events(login).select{ |event| event[:type] == "PushEvent"}
   end
 
   private

@@ -1,0 +1,20 @@
+<% @github_service.following.each do |followed| %>
+  <h4></h4>
+  <table>
+    <thead>
+    <caption><h4><%= followed[:login] %>'s Commit Summary</h4></caption>
+    <tr>
+      <th data-field="repo-name">Repository</th>
+      <th data-field="branch">Branch</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @github_service.commits(followed[:login]).each do |commit| %>
+      <tr>
+        <td><%= commit[:repo][:name] %></td>
+        <td><%= commit[:payload][:ref].split('/').last %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+<% end %>

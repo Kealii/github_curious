@@ -1,5 +1,5 @@
 <h4>Hello, <%= current_user.name %></h4>
 <%= image_tag current_user.image_url %>
-<p>Following: <%= @github_service.following_count %></p>
+<p>Following: <%= @github_service.following.count %></p>
 <p>Followers: <%= @github_service.followers_count %></p>
 <p>Starred:   <%= @github_service.starred_count %></p>

@@ -5,6 +5,8 @@
     <%= render 'welcome/repositories'  if @github_service.repos %>
     <%= render 'welcome/organizations' if @github_service.orgs %>
     <%= render 'welcome/contributions' if @contributions %>
+    <%= render 'welcome/commit_summary' %>
+    <%= render 'welcome/following_commit_summary' %>
 
     <br>
     <%= link_to "Logout", logout_path, class: 'btn' %>
