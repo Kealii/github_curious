@@ -4,6 +4,7 @@
     <h4>Hello, <%= current_user.name %></h4>
     <p>Following: <%= @github_service.following_count %></p>
     <p>Followers: <%= @github_service.followers_count %></p>
+    <p>Starred:   <%= @github_service.starred_count %></p>
     <%= image_tag current_user.image_url %>
     <br>
     <%= link_to "Logout", logout_path, class: 'btn' %>
